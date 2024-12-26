@@ -41,8 +41,8 @@ const adParams = {
 
 // 创建一个adInfo对象
 const adInfo = {
-  zoneId: 261, // 请核对您的参数zoneId
-  publisherId: 273, // 请核对您的参数publisherId
+  zoneId: 261, 
+  publisherId: 273,
   eventId: 0, // 预留参数
 };
 
@@ -57,7 +57,6 @@ const userInfo = {
   userName: "", // username 或 userId ，如果没有请留空
 };
 
-// 创建一个callback的回调对象
 const callbackFunc = {
   // 表示从OpenAD平台加载广告资源，如果发布者槽位/区域没有要加载的资源，将返回false
   adResourceLoad: (e) => {
@@ -90,7 +89,6 @@ const callbackFunc = {
   },
 };
 
-// 手动初始化/加载 OpenAD 资源
 window.openADJsSDK.interactive
   .init({ adParams, adInfo, userInfo })
   .then((res) => {
@@ -98,7 +96,6 @@ window.openADJsSDK.interactive
     if (res.code === 0) {
       window.openADJsSDK.interactive.getRender({ adInfo, cb: callbackFunc });
     } else {
-      // 您不可以回调“getRender”函数，客户端不可以加载互动广告；
       console.log("fail");
     }
   });
