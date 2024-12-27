@@ -36,12 +36,12 @@ System.register(["./application.js"], function (_export, _context) {
 
 const adParams = {
   version: "v202412", // 您的APP版本 ，如果没有请留空
-  TG: { type: "noSDK", FN: null }, // 如果是TMA小程序必填，web应用请不要给这个KEY
+  TG: true, // 如果是TMA小程序必填，web应用请不要给这个KEY
 };
 
 // 创建一个adInfo对象
 const adInfo = {
-  zoneId: 261, 
+  zoneId: 261,
   publisherId: 273,
   eventId: 0, // 预留参数
 };
